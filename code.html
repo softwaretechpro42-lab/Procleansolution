@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment | ProClean Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid #E0E7E6;
+        }
+        .step-active {
+            @apply border-primary text-primary font-bold;
+        }
+        .step-inactive {
+            @apply border-outline-variant text-on-surface-variant opacity-50;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-bottom-color: #006161 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 97, 97, 0.05);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
+<nav class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md font-bold text-primary">ProClean Solutions</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Book Now</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="hidden md:block text-on-surface-variant font-label-md text-label-md hover:bg-primary/5 px-4 py-2 rounded-lg transition-all">Login</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md shadow-md active:scale-90 transition-transform">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-xl px-margin-mobile">
+<div class="max-w-container-max mx-auto">
+<!-- Progress Stepper -->
+<div class="mb-lg overflow-x-auto no-scrollbar">
+<div class="flex items-center justify-between min-w-[600px] md:min-w-full px-base">
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-primary text-on-primary flex items-center justify-center font-bold">1</div>
+<span class="font-label-md text-label-md text-primary">Select Service</span>
+</div>
+<div class="flex-grow h-px bg-outline-variant mx-4 mt-[-20px]"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant font-medium">2</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Schedule</span>
+</div>
+<div class="flex-grow h-px bg-outline-variant mx-4 mt-[-20px]"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant font-medium">3</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Details</span>
+</div>
+<div class="flex-grow h-px bg-outline-variant mx-4 mt-[-20px]"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant font-medium">4</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Confirm</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Booking Form (Main Content) -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Section: Service Type -->
+<section class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">What type of cleaning do you need?</h2>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-b-2 border-outline-variant p-4 pr-10 font-body-md appearance-none rounded-t-lg focus:border-primary transition-all">
+<option data-icon="home" value="residential">Residential Cleaning</option>
+<option data-icon="business" value="commercial">Commercial Cleaning</option>
+<option data-icon="cleaning_services" value="deep">Deep Clean</option>
+<option data-icon="local_shipping" value="move">Move In / Move Out</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+<div class="mt-lg grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="p-md rounded-lg border border-primary bg-primary/5 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-primary mb-2" style="font-size: 32px;">bed</span>
+<span class="font-label-md text-label-md">2 Bedrooms</span>
+</div>
+<div class="p-md rounded-lg border border-outline-variant bg-surface hover:border-primary/50 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" style="font-size: 32px;">bathtub</span>
+<span class="font-label-md text-label-md">1 Bathroom</span>
+</div>
+<div class="p-md rounded-lg border border-outline-variant bg-surface hover:border-primary/50 flex flex-col items-center text-center cursor-pointer transition-all hover:shadow-md">
+<span class="material-symbols-outlined text-on-surface-variant mb-2" style="font-size: 32px;">square_foot</span>
+<span class="font-label-md text-label-md">~1,500 sq ft</span>
+</div>
+</div>
+</section>
+<!-- Section: Schedule -->
+<section class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Pick a Date &amp; Time</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Custom Date Picker Mockup -->
+<div class="p-md border border-outline-variant rounded-lg">
+<div class="flex justify-between items-center mb-md">
+<span class="font-bold text-primary">October 2024</span>
+<div class="flex gap-2">
+<button class="material-symbols-outlined p-1 hover:bg-primary/10 rounded">chevron_left</button>
+<button class="material-symbols-outlined p-1 hover:bg-primary/10 rounded">chevron_right</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-on-surface-variant text-caption mb-2">
+<span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<div class="p-2 text-outline-variant">28</div>
+<div class="p-2 text-outline-variant">29</div>
+<div class="p-2 text-outline-variant">30</div>
+<div class="p-2 hover:bg-primary/5 rounded cursor-pointer">1</div>
+<div class="p-2 hover:bg-primary/5 rounded cursor-pointer">2</div>
+<div class="p-2 bg-primary text-on-primary rounded cursor-pointer font-bold">3</div>
+<div class="p-2 hover:bg-primary/5 rounded cursor-pointer">4</div>
+<!-- Simplified for UI demo -->
+</div>
+</div>
+<!-- Time Slots -->
+<div class="space-y-md">
+<span class="block font-label-md text-label-md text-on-surface-variant">Available Times</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-3 border border-outline-variant rounded hover:border-primary transition-all font-label-md text-label-md">08:00 AM</button>
+<button class="p-3 border-2 border-primary bg-primary/5 rounded font-bold text-primary font-label-md text-label-md">10:30 AM</button>
+<button class="p-3 border border-outline-variant rounded hover:border-primary transition-all font-label-md text-label-md">01:00 PM</button>
+<button class="p-3 border border-outline-variant rounded hover:border-primary transition-all font-label-md text-label-md">03:30 PM</button>
+</div>
+<div class="flex items-center gap-2 p-md bg-secondary-container/10 border border-secondary-container rounded-lg">
+<span class="material-symbols-outlined text-secondary">info</span>
+<p class="text-caption text-on-secondary-container leading-tight">Average cleaning duration: 3.5 hours for your home size.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Location -->
+<section class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Cleaning Location</h2>
+<div class="space-y-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
+<input class="w-full pl-12 p-4 bg-surface-container-low border-b-2 border-outline-variant font-body-md rounded-t-lg transition-all focus:border-primary" placeholder="Start typing your address..." type="text"/>
+<div class="absolute w-full mt-1 bg-surface shadow-lg rounded-lg border border-outline-variant overflow-hidden z-10 hidden" id="address-suggestions">
+<div class="p-3 hover:bg-primary/5 cursor-pointer border-b border-outline-variant/10 text-body-md">123 Luxury Lane, Minneapolis, MN 55401</div>
+<div class="p-3 hover:bg-primary/5 cursor-pointer border-b border-outline-variant/10 text-body-md">456 Pristine Way, St. Paul, MN 55102</div>
+</div>
+</div>
+<div class="h-48 rounded-xl overflow-hidden relative border border-outline-variant/30">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, minimalist high-contrast digital map interface showing a pinpoint location in a sophisticated suburban neighborhood. The colors are muted deep teals and greys with a golden accent for the location marker, matching the pristine luxury aesthetic of the ProClean Solutions brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZrT1ykFSqjZJeoG3KR_SpjKbHhHaG1qou5Vy1hl0GyDZakakdX6SdFv1pbs7HlVEOM0y-Dhqr8vL-ztKMYWhS5sqzcieHlTtnyq2ZSZ7zXpMb9_Nk2rvnk4EPzihfTuTsyR8P59mP65y5cq9CL4R-LH5uVjbztTjOKdKZacHOJa6CWbcUNCeVsvmErl8h-DLFcOHbr8B7RTUIzw-1wKhRR3RnbmNL7XHwMMzryrNEgXBDezZPJrJ-mBT4rvLF38Jc2SldAoi3tLw')"></div>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+</div>
+</div>
+</section>
+</div>
+<!-- Glassmorphic Summary Card -->
+<aside class="lg:col-span-4 sticky top-24">
+<div class="glass-card p-lg rounded-xl shadow-xl flex flex-col gap-lg">
+<h3 class="font-headline-md text-headline-md text-primary">Booking Summary</h3>
+<div class="space-y-md border-b border-outline-variant/20 pb-md">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-on-surface">Residential Cleaning</p>
+<p class="text-caption text-on-surface-variant">2 Bed, 1 Bath • 1,500 sq ft</p>
+</div>
+<span class="font-bold text-primary">$189.00</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="text-body-md">Oct 3, 2024 at 10:30 AM</span>
+</div>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span>$189.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Eco-Friendly Supplies</span>
+<span class="text-tertiary">FREE</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Taxes</span>
+<span>$15.12</span>
+</div>
+<div class="flex justify-between text-headline-md font-bold text-on-surface mt-base pt-base border-t border-outline-variant/20">
+<span>Total</span>
+<span>$204.12</span>
+</div>
+</div>
+<div class="space-y-md mt-base">
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold text-body-lg shadow-lg hover:shadow-xl hover:translate-y-[-2px] active:scale-95 transition-all">
+                                Complete Booking
+                            </button>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-tertiary font-label-md text-label-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span>Secure Encrypted Payment</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span>100% Satisfaction Guarantee</span>
+</div>
+</div>
+</div>
+<div class="p-md bg-primary/5 rounded-lg border border-primary/10">
+<p class="text-caption italic text-on-surface-variant leading-relaxed">
+                                "The easiest booking I've ever made. The team arrived on time and left my penthouse sparkling."
+                            </p>
+<p class="text-caption font-bold mt-2 text-primary">— Sarah J., North Loop</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/20 pt-xl pb-lg w-full mt-xl">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-md">ProClean Solutions</div>
+<p class="text-on-surface-variant font-body-md">Exceptional cleaning for high-end living in the Twin Cities. Experience the luxury of a pristine home.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Cleaning Services</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Residential Cleaning</a></li>
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Commercial Cleaning</a></li>
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Deep Clean</a></li>
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Move In/Out</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Support</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Help Center</a></li>
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-transform hover:translate-x-1 inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface mb-md">Newsletter</h4>
+<div class="flex gap-2">
+<input class="bg-surface-container-low border-b border-outline-variant p-2 w-full text-caption" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary p-2 px-4 rounded font-label-md text-label-md">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-lg pt-lg border-t border-outline-variant/10 text-center">
+<p class="text-caption text-on-surface-variant">© 2024 ProClean Solutions. All rights reserved. Pristine Luxury &amp; Trust.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and focus states
+        const addressInput = document.querySelector('input[placeholder="Start typing your address..."]');
+        const addressSuggestions = document.getElementById('address-suggestions');
+
+        addressInput.addEventListener('focus', () => {
+            addressSuggestions.classList.remove('hidden');
+            addressSuggestions.classList.add('animate-in', 'fade-in', 'slide-in-from-top-2');
+        });
+
+        addressInput.addEventListener('blur', () => {
+            // Delay to allow clicking suggestions
+            setTimeout(() => {
+                addressSuggestions.classList.add('hidden');
+            }, 200);
+        });
+
+        // Hover effect for time slots
+        document.querySelectorAll('button.font-label-md').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Clear others
+                document.querySelectorAll('button.font-label-md').forEach(b => {
+                    b.classList.remove('border-2', 'border-primary', 'bg-primary/5', 'text-primary', 'font-bold');
+                    b.classList.add('border', 'border-outline-variant');
+                });
+                // Set active
+                this.classList.remove('border', 'border-outline-variant');
+                this.classList.add('border-2', 'border-primary', 'bg-primary/5', 'text-primary', 'font-bold');
+            });
+        });
+    </script>
+</body></html>
